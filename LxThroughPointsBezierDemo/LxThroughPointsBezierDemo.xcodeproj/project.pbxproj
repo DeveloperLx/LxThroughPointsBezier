@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		354386191A695D3A00D8AFCE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 354386181A695D3A00D8AFCE /* main.m */; };
+		3543861C1A695D3A00D8AFCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3543861B1A695D3A00D8AFCE /* AppDelegate.m */; };
+		3543861F1A695D3A00D8AFCE /* LxThroughPointsBezierDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3543861D1A695D3A00D8AFCE /* LxThroughPointsBezierDemo.xcdatamodeld */; };
+		354386221A695D3A00D8AFCE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 354386211A695D3A00D8AFCE /* ViewController.m */; };
+		354386251A695D3A00D8AFCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 354386231A695D3A00D8AFCE /* Main.storyboard */; };
+		354386271A695D3A00D8AFCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354386261A695D3A00D8AFCE /* Images.xcassets */; };
+		3543862A1A695D3A00D8AFCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354386281A695D3A00D8AFCE /* LaunchScreen.xib */; };
+		354386361A695D3A00D8AFCE /* LxThroughPointsBezierDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 354386351A695D3A00D8AFCE /* LxThroughPointsBezierDemoTests.m */; };
+		354386461A695EDD00D8AFCE /* UIBezierPath+LxThroughPointsBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 354386451A695EDD00D8AFCE /* UIBezierPath+LxThroughPointsBezier.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		354386301A695D3A00D8AFCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3543860B1A695D3900D8AFCE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 354386121A695D3900D8AFCE;
+			remoteInfo = LxThroughPointsBezierDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		354386131A695D3900D8AFCE /* LxThroughPointsBezierDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LxThroughPointsBezierDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		354386171A695D3A00D8AFCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		354386181A695D3A00D8AFCE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3543861A1A695D3A00D8AFCE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3543861B1A695D3A00D8AFCE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3543861E1A695D3A00D8AFCE /* LxThroughPointsBezierDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LxThroughPointsBezierDemo.xcdatamodel; sourceTree = "<group>"; };
+		354386201A695D3A00D8AFCE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		354386211A695D3A00D8AFCE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		354386241A695D3A00D8AFCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		354386261A695D3A00D8AFCE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		354386291A695D3A00D8AFCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3543862F1A695D3A00D8AFCE /* LxThroughPointsBezierDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LxThroughPointsBezierDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		354386341A695D3A00D8AFCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		354386351A695D3A00D8AFCE /* LxThroughPointsBezierDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LxThroughPointsBezierDemoTests.m; sourceTree = "<group>"; };
+		354386441A695EDD00D8AFCE /* UIBezierPath+LxThroughPointsBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+LxThroughPointsBezier.h"; sourceTree = "<group>"; };
+		354386451A695EDD00D8AFCE /* UIBezierPath+LxThroughPointsBezier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+LxThroughPointsBezier.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		354386101A695D3900D8AFCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3543862C1A695D3A00D8AFCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3543860A1A695D3900D8AFCE = {
+			isa = PBXGroup;
+			children = (
+				354386151A695D3A00D8AFCE /* LxThroughPointsBezierDemo */,
+				354386321A695D3A00D8AFCE /* LxThroughPointsBezierDemoTests */,
+				354386141A695D3A00D8AFCE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		354386141A695D3A00D8AFCE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				354386131A695D3900D8AFCE /* LxThroughPointsBezierDemo.app */,
+				3543862F1A695D3A00D8AFCE /* LxThroughPointsBezierDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		354386151A695D3A00D8AFCE /* LxThroughPointsBezierDemo */ = {
+			isa = PBXGroup;
+			children = (
+				354386431A695EDD00D8AFCE /* LxThroughPointsBezier */,
+				3543861A1A695D3A00D8AFCE /* AppDelegate.h */,
+				3543861B1A695D3A00D8AFCE /* AppDelegate.m */,
+				354386201A695D3A00D8AFCE /* ViewController.h */,
+				354386211A695D3A00D8AFCE /* ViewController.m */,
+				354386231A695D3A00D8AFCE /* Main.storyboard */,
+				354386261A695D3A00D8AFCE /* Images.xcassets */,
+				354386281A695D3A00D8AFCE /* LaunchScreen.xib */,
+				3543861D1A695D3A00D8AFCE /* LxThroughPointsBezierDemo.xcdatamodeld */,
+				354386161A695D3A00D8AFCE /* Supporting Files */,
+			);
+			path = LxThroughPointsBezierDemo;
+			sourceTree = "<group>";
+		};
+		354386161A695D3A00D8AFCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				354386171A695D3A00D8AFCE /* Info.plist */,
+				354386181A695D3A00D8AFCE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		354386321A695D3A00D8AFCE /* LxThroughPointsBezierDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				354386351A695D3A00D8AFCE /* LxThroughPointsBezierDemoTests.m */,
+				354386331A695D3A00D8AFCE /* Supporting Files */,
+			);
+			path = LxThroughPointsBezierDemoTests;
+			sourceTree = "<group>";
+		};
+		354386331A695D3A00D8AFCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				354386341A695D3A00D8AFCE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		354386431A695EDD00D8AFCE /* LxThroughPointsBezier */ = {
+			isa = PBXGroup;
+			children = (
+				354386441A695EDD00D8AFCE /* UIBezierPath+LxThroughPointsBezier.h */,
+				354386451A695EDD00D8AFCE /* UIBezierPath+LxThroughPointsBezier.m */,
+			);
+			name = LxThroughPointsBezier;
+			path = ../../LxThroughPointsBezier;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		354386121A695D3900D8AFCE /* LxThroughPointsBezierDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 354386391A695D3A00D8AFCE /* Build configuration list for PBXNativeTarget "LxThroughPointsBezierDemo" */;
+			buildPhases = (
+				3543860F1A695D3900D8AFCE /* Sources */,
+				354386101A695D3900D8AFCE /* Frameworks */,
+				354386111A695D3900D8AFCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LxThroughPointsBezierDemo;
+			productName = LxThroughPointsBezierDemo;
+			productReference = 354386131A695D3900D8AFCE /* LxThroughPointsBezierDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3543862E1A695D3A00D8AFCE /* LxThroughPointsBezierDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3543863C1A695D3A00D8AFCE /* Build configuration list for PBXNativeTarget "LxThroughPointsBezierDemoTests" */;
+			buildPhases = (
+				3543862B1A695D3A00D8AFCE /* Sources */,
+				3543862C1A695D3A00D8AFCE /* Frameworks */,
+				3543862D1A695D3A00D8AFCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				354386311A695D3A00D8AFCE /* PBXTargetDependency */,
+			);
+			name = LxThroughPointsBezierDemoTests;
+			productName = LxThroughPointsBezierDemoTests;
+			productReference = 3543862F1A695D3A00D8AFCE /* LxThroughPointsBezierDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3543860B1A695D3900D8AFCE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Gener-health-li.x";
+				TargetAttributes = {
+					354386121A695D3900D8AFCE = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					3543862E1A695D3A00D8AFCE = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 354386121A695D3900D8AFCE;
+					};
+				};
+			};
+			buildConfigurationList = 3543860E1A695D3900D8AFCE /* Build configuration list for PBXProject "LxThroughPointsBezierDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3543860A1A695D3900D8AFCE;
+			productRefGroup = 354386141A695D3A00D8AFCE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				354386121A695D3900D8AFCE /* LxThroughPointsBezierDemo */,
+				3543862E1A695D3A00D8AFCE /* LxThroughPointsBezierDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		354386111A695D3900D8AFCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354386251A695D3A00D8AFCE /* Main.storyboard in Resources */,
+				3543862A1A695D3A00D8AFCE /* LaunchScreen.xib in Resources */,
+				354386271A695D3A00D8AFCE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3543862D1A695D3A00D8AFCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3543860F1A695D3900D8AFCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3543861F1A695D3A00D8AFCE /* LxThroughPointsBezierDemo.xcdatamodeld in Sources */,
+				354386461A695EDD00D8AFCE /* UIBezierPath+LxThroughPointsBezier.m in Sources */,
+				3543861C1A695D3A00D8AFCE /* AppDelegate.m in Sources */,
+				354386221A695D3A00D8AFCE /* ViewController.m in Sources */,
+				354386191A695D3A00D8AFCE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3543862B1A695D3A00D8AFCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354386361A695D3A00D8AFCE /* LxThroughPointsBezierDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		354386311A695D3A00D8AFCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 354386121A695D3900D8AFCE /* LxThroughPointsBezierDemo */;
+			targetProxy = 354386301A695D3A00D8AFCE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		354386231A695D3A00D8AFCE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				354386241A695D3A00D8AFCE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		354386281A695D3A00D8AFCE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				354386291A695D3A00D8AFCE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		354386371A695D3A00D8AFCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		354386381A695D3A00D8AFCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3543863A1A695D3A00D8AFCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LxThroughPointsBezierDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3543863B1A695D3A00D8AFCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LxThroughPointsBezierDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3543863D1A695D3A00D8AFCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LxThroughPointsBezierDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LxThroughPointsBezierDemo.app/LxThroughPointsBezierDemo";
+			};
+			name = Debug;
+		};
+		3543863E1A695D3A00D8AFCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LxThroughPointsBezierDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LxThroughPointsBezierDemo.app/LxThroughPointsBezierDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3543860E1A695D3900D8AFCE /* Build configuration list for PBXProject "LxThroughPointsBezierDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				354386371A695D3A00D8AFCE /* Debug */,
+				354386381A695D3A00D8AFCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		354386391A695D3A00D8AFCE /* Build configuration list for PBXNativeTarget "LxThroughPointsBezierDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3543863A1A695D3A00D8AFCE /* Debug */,
+				3543863B1A695D3A00D8AFCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3543863C1A695D3A00D8AFCE /* Build configuration list for PBXNativeTarget "LxThroughPointsBezierDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3543863D1A695D3A00D8AFCE /* Debug */,
+				3543863E1A695D3A00D8AFCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3543861D1A695D3A00D8AFCE /* LxThroughPointsBezierDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3543861E1A695D3A00D8AFCE /* LxThroughPointsBezierDemo.xcdatamodel */,
+			);
+			currentVersion = 3543861E1A695D3A00D8AFCE /* LxThroughPointsBezierDemo.xcdatamodel */;
+			path = LxThroughPointsBezierDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3543860B1A695D3900D8AFCE /* Project object */;
+}
