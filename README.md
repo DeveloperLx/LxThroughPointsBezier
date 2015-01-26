@@ -2,7 +2,7 @@
 Draw a smooth bezier through several points you designated. The curve‘s bend level is adjustable.
 Installation
 ------------
-You only need drag LxFTPRequest.h and LxFTPRequest.m to your project.
+You only need drag UIBezierPath+LxThroughPointsBezier.h and UIBezierPath+LxThroughPointsBezier.m to your project.
 Support
 ------------
         Minimum support iOS version: iOS 5.0
