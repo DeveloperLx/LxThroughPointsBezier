@@ -3,9 +3,6 @@
 //  LxThroughPointsBezierDemo
 //
 
-#define PRINTF_MARK(x) printf("%s\n",#x)
-#define PRINTF(fmt, ...)    printf("%s\n",[[NSString stringWithFormat:fmt,##__VA_ARGS__]UTF8String])
-
 #import "UIBezierPath+LxThroughPointsBezier.h"
 #import <objc/runtime.h>
 
@@ -28,10 +25,10 @@
 - (void)addCurvesThroughPoints:(NSArray *)pointArray
 {
     if (pointArray.count < 4) {
-        if (pointArray.count <= 1) {
-            PRINTF(@"You must give at least 2 point for drawing curve.");  //
-        }
-        else if (pointArray.count == 2) {
+
+        NSAssert(pointArray.count >= 2, @"You must give at least 2 point for drawing the curve.");
+        
+        if (pointArray.count == 2) {
             
             NSValue * point0Value = pointArray[0];
             CGPoint point0 = [point0Value CGPointValue];
