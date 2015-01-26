@@ -19,9 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
-    CGPoint point1 = CGPointMake(30, 180);
+    CGPoint point1 = CGPointMake(30, 210);
     CGPoint point2 = CGPointMake(90, 120);
     CGPoint point3 = CGPointMake(120, 200);
     CGPoint point4 = CGPointMake(160, 240);
@@ -56,6 +55,7 @@
     _shapeLayer.fillColor = nil;
     _shapeLayer.lineWidth = 3;
     _shapeLayer.path = _curve.CGPath;
+    _shapeLayer.lineCap = kCALineCapRound;
     [self.view.layer addSublayer:_shapeLayer];
     
     UISlider * slider = [[UISlider alloc]initWithFrame:CGRectMake(20, 84, 280, 6)];
