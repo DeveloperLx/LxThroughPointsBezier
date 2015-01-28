@@ -40,7 +40,8 @@
     [_pointArray addObjectsFromArray:@[point1Value, point2Value, point3Value, point4Value, point5Value, point6Value, point7Value]];
     
     _curve = [UIBezierPath bezierPath];
-    [_curve addCurvesThroughPoints:_pointArray];
+    [_curve moveToPoint:point1];
+    [_curve addBezierThroughPoints:_pointArray];
     
     [self drawPoint:point1];
     [self drawPoint:point2];
@@ -58,12 +59,18 @@
     _shapeLayer.lineCap = kCALineCapRound;
     [self.view.layer addSublayer:_shapeLayer];
     
-    UISlider * slider = [[UISlider alloc]initWithFrame:CGRectMake(20, 84, 280, 6)];
+    UISlider * slider = [[UISlider alloc]init];
     slider.minimumValue = 0;
     slider.maximumValue = 1.4;
     slider.value = 0.7;
+    slider.translatesAutoresizingMaskIntoConstraints = NO;
     [slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:slider];
+    
+    NSArray * sliderHorizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[slider]-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:NSDictionaryOfVariableBindings(slider)];
+    NSArray * sliderVerticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-topMargin-[slider(==sliderHeight)]" options:NSLayoutFormatDirectionLeadingToTrailing metrics:@{@"sliderHeight":@6, @"topMargin":@60} views:NSDictionaryOfVariableBindings(slider)];
+    [self.view addConstraints:sliderHorizontalConstraints];
+    [self.view addConstraints:sliderVerticalConstraints];
 }
 
 - (void)drawPoint:(CGPoint)point
@@ -81,7 +88,12 @@
 {
     [_curve removeAllPoints];
     _curve.contractionFactor = slider.value;
-    [_curve addCurvesThroughPoints:_pointArray];
+    
+    NSValue * point0Value = _pointArray[0];
+    CGPoint point0 = [point0Value CGPointValue];
+    
+    [_curve moveToPoint:point0];
+    [_curve addBezierThroughPoints:_pointArray];
     
     _shapeLayer.path = _curve.CGPath;
 }
