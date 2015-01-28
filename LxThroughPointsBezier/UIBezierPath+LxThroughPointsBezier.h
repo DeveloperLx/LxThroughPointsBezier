@@ -15,8 +15,8 @@
 /**
  *  You must wrap CGPoint struct to NSValue object.
  *
- *  @param pointArray Points you want to through. You must give at least 2 point for drawing curve.
+ *  @param pointArray Points you want to through. You must give at least 1 point for drawing curve.
  */
-- (void)addCurvesThroughPoints:(NSArray *)pointArray;
+- (void)addBezierThroughPoints:(NSArray *)pointArray;
 
 @end

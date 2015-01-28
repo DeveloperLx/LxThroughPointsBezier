@@ -22,144 +22,108 @@
     return [contractionFactorAssociatedObject floatValue];
 }
 
-- (void)addCurvesThroughPoints:(NSArray *)pointArray
+- (void)addBezierThroughPoints:(NSArray *)pointArray
 {
-    if (pointArray.count < 4) {
-
-        NSAssert(pointArray.count >= 2, @"You must give at least 2 point for drawing the curve.");
-        
-        if (pointArray.count == 2) {
-            
-            NSValue * point0Value = pointArray[0];
-            CGPoint point0 = [point0Value CGPointValue];
-            NSValue * point1Value = pointArray[1];
-            CGPoint point1 = [point1Value CGPointValue];
-            
-            [self moveToPoint:point0];
-            [self addLineToPoint:point1];
+    NSAssert(pointArray.count > 0, @"You must give at least 1 point for drawing the curve.");
+    
+    if (pointArray.count < 3) {
+        switch (pointArray.count) {
+            case 1:
+            {
+                NSValue * point0Value = pointArray[0];
+                CGPoint point0 = [point0Value CGPointValue];
+                [self addLineToPoint:point0];
+            }
+                break;
+            case 2:
+            {
+                NSValue * point0Value = pointArray[0];
+                CGPoint point0 = [point0Value CGPointValue];
+                NSValue * point1Value = pointArray[1];
+                CGPoint point1 = [point1Value CGPointValue];
+                [self addQuadCurveToPoint:point1 controlPoint:ControlPointForTheBezierCanThrough3Point(self.currentPoint, point0, point1)];
+            }
+                break;
+            default:
+                break;
         }
-        else if (pointArray.count == 3) {
-            
-            NSValue * point0Value = pointArray[0];
-            CGPoint point0 = [point0Value CGPointValue];
-            NSValue * point1Value = pointArray[1];
-            CGPoint point1 = [point1Value CGPointValue];
-            NSValue * point2Value = pointArray[2];
-            CGPoint point2 = [point2Value CGPointValue];
-            
-            [self moveToPoint:point0];
-            [self addQuadCurveToPoint:point2 controlPoint:controlPointThatBezierPathCanThroughThe3Point(point0, point1, point2)];
-        }
-        else {
-            
-        }
-        return;
     }
     
-    CGFloat contractionFactor = MAX(0, self.contractionFactor);
-    
     CGPoint previousPoint = CGPointZero;
-    CGPoint previousPreviousPoint = CGPointZero;
     
-    CGPoint centerPoint1 = CGPointZero;
-    CGPoint centerPoint2 = CGPointZero;
+    CGPoint previousCenterPoint = CGPointZero;
+    CGPoint centerPoint = CGPointZero;
     CGFloat centerPointDistance = 0;
     
     CGFloat obliqueRatio = 0;
     CGFloat obliqueAngle = 0;
     
-    CGPoint controlPoint1 = CGPointZero;
-    CGPoint controlPoint2 = CGPointZero;
-    
+    CGPoint previousControlPoint1 = CGPointZero;
     CGPoint previousControlPoint2 = CGPointZero;
+    CGPoint controlPoint1 = CGPointZero;
+
+    previousPoint = self.currentPoint;
     
     for (int i = 0; i < pointArray.count; i++) {
         
-        NSValue * pointValue = pointArray[i];
-        CGPoint point = [pointValue CGPointValue];
+        NSValue * pointIValue = pointArray[i];
+        CGPoint pointI = [pointIValue CGPointValue];
         
-        if (i == 2) {
-            centerPoint1 = CGPointMake((previousPreviousPoint.x + previousPoint.x) / 2, (previousPreviousPoint.y + previousPoint.y) / 2);
-            centerPoint2 = CGPointMake((previousPoint.x + point.x) / 2, (previousPoint.y + point.y) / 2);
+        if (i > 0) {
             
-            centerPointDistance = distanceBetweenPoint(centerPoint1, centerPoint2);
+            previousCenterPoint = CenterPointOf(self.currentPoint, previousPoint);
+            centerPoint = CenterPointOf(previousPoint, pointI);
             
-            if (centerPoint1.x != centerPoint2.x) {
-                obliqueRatio = (centerPoint2.y - centerPoint1.y) / (centerPoint2.x - centerPoint1.x);
+            centerPointDistance = DistanceBetweenPoint(previousCenterPoint, centerPoint);
+            
+            if (previousCenterPoint.x != centerPoint.x) {
+                
+                obliqueRatio = (centerPoint.y - previousCenterPoint.y) / (centerPoint.x - previousCenterPoint.x);
                 obliqueAngle = atan(obliqueRatio);
             }
             else {
                 obliqueAngle = M_PI_2;
             }
             
-            controlPoint1 = CGPointMake(previousPoint.x - 0.5 * contractionFactor * centerPointDistance * cos(obliqueAngle), previousPoint.y - 0.5 * centerPointDistance * sin(obliqueAngle));
-            controlPoint2 = CGPointMake(previousPoint.x + 0.5 * contractionFactor * centerPointDistance * cos(obliqueAngle), previousPoint.y + 0.5 * centerPointDistance * sin(obliqueAngle));
-            
-            [self moveToPoint:previousPreviousPoint];
-            [self addQuadCurveToPoint:previousPoint controlPoint:controlPoint1];
-            
-            previousControlPoint2 = controlPoint2;
+            previousControlPoint2 = CGPointMake(previousPoint.x - 0.5 * self.contractionFactor * centerPointDistance * cos(obliqueAngle), previousPoint.y - 0.5 * self.contractionFactor * centerPointDistance * sin(obliqueAngle));
+            controlPoint1 = CGPointMake(previousPoint.x + 0.5 * self.contractionFactor * centerPointDistance * cos(obliqueAngle), previousPoint.y + 0.5 * self.contractionFactor * centerPointDistance * sin(obliqueAngle));
         }
-        else if (i > 2 && i < pointArray.count - 1) {
-            centerPoint1 = CGPointMake((previousPreviousPoint.x + previousPoint.x) / 2, (previousPreviousPoint.y + previousPoint.y) / 2);
-            centerPoint2 = CGPointMake((previousPoint.x + point.x) / 2, (previousPoint.y + point.y) / 2);
+        
+        if (i == 1) {
             
-            centerPointDistance = distanceBetweenPoint(centerPoint1, centerPoint2);
-            
-            if (centerPoint1.x != centerPoint2.x) {
-                obliqueRatio = (centerPoint2.y - centerPoint1.y) / (centerPoint2.x - centerPoint1.x);
-                obliqueAngle = atan(obliqueRatio);
-            }
-            else {
-                obliqueAngle = M_PI_2;
-            }
-            
-            controlPoint1 = CGPointMake(previousPoint.x - 0.5 * contractionFactor * centerPointDistance * cos(obliqueAngle), previousPoint.y - 0.5 * centerPointDistance * sin(obliqueAngle));
-            controlPoint2 = CGPointMake(previousPoint.x + 0.5 * contractionFactor * centerPointDistance * cos(obliqueAngle), previousPoint.y + 0.5 * centerPointDistance * sin(obliqueAngle));
-            
-            [self moveToPoint:previousPreviousPoint];
-            [self addCurveToPoint:previousPoint controlPoint1:previousControlPoint2 controlPoint2:controlPoint1];
-            
-            previousControlPoint2 = controlPoint2;
+            [self addQuadCurveToPoint:previousPoint controlPoint:previousControlPoint2];
+        }
+        else if (i > 1 && i < pointArray.count - 1) {
+        
+            [self addCurveToPoint:previousPoint controlPoint1:previousControlPoint1 controlPoint2:previousControlPoint2];
         }
         else if (i == pointArray.count - 1) {
-            centerPoint1 = CGPointMake((previousPreviousPoint.x + previousPoint.x) / 2, (previousPreviousPoint.y + previousPoint.y) / 2);
-            centerPoint2 = CGPointMake((previousPoint.x + point.x) / 2, (previousPoint.y + point.y) / 2);
-            
-            centerPointDistance = distanceBetweenPoint(centerPoint1, centerPoint2);
-            
-            if (centerPoint1.x != centerPoint2.x) {
-                obliqueRatio = (centerPoint2.y - centerPoint1.y) / (centerPoint2.x - centerPoint1.x);
-                obliqueAngle = atan(obliqueRatio);
-            }
-            else {
-                obliqueAngle = M_PI_2;
-            }
-            
-            controlPoint1 = CGPointMake(previousPoint.x - 0.5 * contractionFactor * centerPointDistance * cos(obliqueAngle), previousPoint.y - 0.5 * centerPointDistance * sin(obliqueAngle));
-            controlPoint2 = CGPointMake(previousPoint.x + 0.5 * contractionFactor * centerPointDistance * cos(obliqueAngle), previousPoint.y + 0.5 * centerPointDistance * sin(obliqueAngle));
-            
-            [self moveToPoint:previousPreviousPoint];
-            [self addCurveToPoint:previousPoint controlPoint1:previousControlPoint2 controlPoint2:controlPoint1];
-            [self addQuadCurveToPoint:point controlPoint:controlPoint2];
+        
+            [self addCurveToPoint:previousPoint controlPoint1:previousControlPoint1 controlPoint2:previousControlPoint2];
+            [self addQuadCurveToPoint:pointI controlPoint:controlPoint1];
         }
         else {
-            
+        
         }
         
-        previousPreviousPoint = previousPoint;
-        previousPoint = point;
+        previousControlPoint1 = controlPoint1;
+        previousPoint = pointI;
     }
 }
 
-CGPoint controlPointThatBezierPathCanThroughThe3Point(CGPoint point1, CGPoint point2, CGPoint point3)
+CGPoint ControlPointForTheBezierCanThrough3Point(CGPoint point1, CGPoint point2, CGPoint point3)
 {
     return CGPointMake(2 * point2.x - (point1.x + point3.x) / 2, 2 * point2.y - (point1.y + point3.y) / 2);
 }
 
-CGFloat distanceBetweenPoint(CGPoint point1, CGPoint point2)
+CGFloat DistanceBetweenPoint(CGPoint point1, CGPoint point2)
 {
     return sqrt((point1.x - point2.x) * (point1.x - point2.x) + (point1.y - point2.y) * (point1.y - point2.y));
+}
+
+CGPoint CenterPointOf(CGPoint point1, CGPoint point2)
+{
+    return CGPointMake((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
 }
 
 @end
