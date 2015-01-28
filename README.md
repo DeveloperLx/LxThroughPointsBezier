@@ -30,7 +30,9 @@ How to use
     [_pointArray addObjectsFromArray:@[point1Value, point2Value, point3Value, point4Value, point5Value, point6Value, point7Value]];
     
     _curve = [UIBezierPath bezierPath];
-    [_curve addCurvesThroughPoints:_pointArray];
+    _curve.contractionFactor = 0.6;
+    [_curve moveToPoint:point1];
+    [_curve addBezierThroughPoints:_pointArray];
     
     _shapeLayer = [CAShapeLayer layer];
     _shapeLayer.strokeColor = [UIColor blueColor].CGColor;
@@ -40,5 +42,8 @@ How to use
     [_view.layer addSublayer:_shapeLayer];
 Be careful            
 -----------
-    The good bend level is about 0.6 ~ 0.8. The default and recommended value is 0.7.
-    You must wrap CGPoint struct to NSValue object, and give at least 2 point for drawing the curve.
+        The good bend level is about 0.6 ~ 0.8. The default and recommended value is 0.7.
+        You must wrap CGPoint struct to NSValue object, and give at least 1 point for drawing the curve.
+License
+-----------
+        AFNetworking is available under the Apache License 2.0. See the LICENSE file for more info.
