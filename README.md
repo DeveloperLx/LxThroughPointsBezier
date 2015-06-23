@@ -9,7 +9,7 @@ Support
 How to use
 -----------
     #import "UIBezierPath+LxThroughPointsBezier.h"
-###
+
     CGPoint point1 = CGPointMake(30, 180);
     CGPoint point2 = CGPointMake(90, 120);
     CGPoint point3 = CGPointMake(120, 200);
@@ -40,6 +40,10 @@ How to use
     _shapeLayer.lineWidth = 3;
     _shapeLayer.path = _curve.CGPath;
     [_view.layer addSublayer:_shapeLayer];
+Effect
+-----------
+*	![curve](curve.png)
+
 Be careful            
 -----------
         The good bend level is about 0.6 ~ 0.8. The default and recommended value is 0.7.
