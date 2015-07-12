@@ -42,7 +42,7 @@ How to use
     [_view.layer addSublayer:_shapeLayer];
 Effect
 -----------
-*	![curve](curve.png)
+*	![demo](demo.gif)
 
 Be careful            
 -----------

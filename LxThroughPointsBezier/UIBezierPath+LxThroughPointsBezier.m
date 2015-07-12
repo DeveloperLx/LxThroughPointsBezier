@@ -55,7 +55,6 @@
     CGPoint centerPoint = CGPointZero;
     CGFloat centerPointDistance = 0;
     
-    CGFloat obliqueRatio = 0;
     CGFloat obliqueAngle = 0;
     
     CGPoint previousControlPoint1 = CGPointZero;
@@ -76,14 +75,7 @@
             
             centerPointDistance = DistanceBetweenPoint(previousCenterPoint, centerPoint);
             
-            if (previousCenterPoint.x != centerPoint.x) {
-                
-                obliqueRatio = (centerPoint.y - previousCenterPoint.y) / (centerPoint.x - previousCenterPoint.x);
-                obliqueAngle = atan(obliqueRatio);
-            }
-            else {
-                obliqueAngle = M_PI_2;
-            }
+            obliqueAngle = ObliqueAngleOfStraightThrough(centerPoint, previousCenterPoint);
             
             previousControlPoint2 = CGPointMake(previousPoint.x - 0.5 * self.contractionFactor * centerPointDistance * cos(obliqueAngle), previousPoint.y - 0.5 * self.contractionFactor * centerPointDistance * sin(obliqueAngle));
             controlPoint1 = CGPointMake(previousPoint.x + 0.5 * self.contractionFactor * centerPointDistance * cos(obliqueAngle), previousPoint.y + 0.5 * self.contractionFactor * centerPointDistance * sin(obliqueAngle));
@@ -109,6 +101,32 @@
         previousControlPoint1 = controlPoint1;
         previousPoint = pointI;
     }
+}
+
+CGFloat ObliqueAngleOfStraightThrough(CGPoint point1, CGPoint point2)   //  [-π/2, 3π/2)
+{
+    CGFloat obliqueRatio = 0;
+    CGFloat obliqueAngle = 0;
+    
+    if (point1.x > point2.x) {
+    
+        obliqueRatio = (point2.y - point1.y) / (point2.x - point1.x);
+        obliqueAngle = atan(obliqueRatio);
+    }
+    else if (point1.x < point2.x) {
+    
+        obliqueRatio = (point2.y - point1.y) / (point2.x - point1.x);
+        obliqueAngle = M_PI + atan(obliqueRatio);
+    }
+    else if (point2.y - point1.y >= 0) {
+    
+        obliqueAngle = M_PI/2;
+    }
+    else {
+        obliqueAngle = -M_PI/2;
+    }
+    
+    return obliqueAngle;
 }
 
 CGPoint ControlPointForTheBezierCanThrough3Point(CGPoint point1, CGPoint point2, CGPoint point3)
