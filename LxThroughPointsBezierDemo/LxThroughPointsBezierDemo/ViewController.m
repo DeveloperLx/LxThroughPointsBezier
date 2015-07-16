@@ -26,7 +26,6 @@
     slider.minimumValue = 0;
     slider.maximumValue = 1.4;
     slider.value = 0.7;
-    slider.translatesAutoresizingMaskIntoConstraints = NO;
     [slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:slider];
     
