@@ -3,6 +3,11 @@ Draw a smooth bezier through several points you designated. The curve‘s bend l
 Installation
 ------------
 You only need drag UIBezierPath+LxThroughPointsBezier.h and UIBezierPath+LxThroughPointsBezier.m to your project.
+
+Podfile
+------------
+pod 'LxThroughPointsBezier', '~> 1.0.0'
+
 Support
 ------------
         Minimum support iOS version: iOS 5.0
