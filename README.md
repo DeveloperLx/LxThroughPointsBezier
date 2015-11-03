@@ -1,16 +1,16 @@
 # LxThroughPointsBezier
-Draw a smooth bezier through several points you designated. The curve‘s bend level is adjustable.
+    Draw a smooth bezier through several points you designated. The curve‘s bend level is adjustable.
 Installation
 ------------
-You only need drag UIBezierPath+LxThroughPointsBezier.h and UIBezierPath+LxThroughPointsBezier.m to your project.
+    You only need drag UIBezierPath+LxThroughPointsBezier.h and UIBezierPath+LxThroughPointsBezier.m to your project.
 
 Podfile
 ------------
-pod 'LxThroughPointsBezier', '~> 1.0.0'
+    pod 'LxThroughPointsBezier', '~> 1.0.0'
 
 Support
 ------------
-        Minimum support iOS version: iOS 5.0
+    Minimum support iOS version: iOS 5.0
 How to use
 -----------
     #import "UIBezierPath+LxThroughPointsBezier.h"
@@ -51,8 +51,8 @@ Effect
 
 Be careful            
 -----------
-        The good bend level is about 0.6 ~ 0.8. The default and recommended value is 0.7.
-        You must wrap CGPoint struct to NSValue object, and give at least 1 point for drawing the curve.
+    The good bend level is about 0.6 ~ 0.8. The default and recommended value is 0.7.
+    You must wrap CGPoint struct to NSValue object, and give at least 1 point for drawing the curve.
 License
 -----------
-        LxThroughPointsBezier is available under the Apache License 2.0. See the LICENSE file for more info.
+    LxThroughPointsBezier is available under the Apache License 2.0. See the LICENSE file for more info.
