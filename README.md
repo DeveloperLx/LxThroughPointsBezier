@@ -13,6 +13,7 @@ Support
     Minimum support iOS version: iOS 5.0
 How to use
 -----------
+```objc
     #import "UIBezierPath+LxThroughPointsBezier.h"
 
     CGPoint point1 = CGPointMake(30, 180);
@@ -45,6 +46,7 @@ How to use
     _shapeLayer.lineWidth = 3;
     _shapeLayer.path = _curve.CGPath;
     [_view.layer addSublayer:_shapeLayer];
+```
 Effect
 -----------
 *	![demo](demo.gif)
